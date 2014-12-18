@@ -487,7 +487,7 @@ void testApp::draw(){
      grabber.draw( 0, 0 );                            //вывод кадра
      outImageTexture.draw( w, 0, w, h );     //вывод результата обработки
 } 
-``` 
+```
  
  
 
@@ -500,6 +500,7 @@ void testApp::draw(){
 Это такие пикселы, Blue-канал которых существенно больше их Red и Green-каналов. Для этого:
 
 >>>>>>>>> Меняем строку с int result... на:
+
 ```cpp
 int result = ( b > r + 100 && b > g + 100 ) ? 255 : 0;
 ```
