@@ -5,6 +5,7 @@
 
 В папке `articles` статьи:
 
+  * [Введение в компьютерное зрение](articles/camera.md)
   * [04. Интерактивный звук](articles/04_sound.md)
 
 В папке `examples` - примеры на openFrameworks.
