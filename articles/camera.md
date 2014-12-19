@@ -640,6 +640,27 @@ float time0 = 0;    //время последнего входа в update()
 - проще решать с помощью готовых процедур, реализованных в библиотеке OpenCV, подключаемой к OpenFrameworks.
  
 
+Использование класса ofPixels
+--------------------
+В openFrameworks есть класс ofPixels - пиксельный массив, и команды pixels.getColor(x,y) и pixels.setColor( x, y, color ).
+Они очень упрощают простые операции с пикселями, но, конечно, работают медленнее низкоуровнегого доступа, описанного в тексте.
 
+Базовые классы - ofImage, ofVideoPlayer, ofVideoGrabber - позволяют получить объект типа ofPixels:
+```cpp
+ofPixels &pixels = image.getPixelsRef();
+```
+А объект типа ofImage позволяет себя инициализировать командой
+image.setFromPixels( pixels ).
 
+Для работы с объектом ofPixels нужно его взять из какого-то изображения,
+загрузить из файла командой ofLoadImage( pixels, "image.png" );
+либо создать командой allocate:
+```cpp
+ofPixels pixels;
+pixels.allocate( 200, 100, 3 ); //последний аргумент - количество каналов.
+```
+ofPixels - хранит данные типа unsigned char. Ест вариант ofFloatPixels для вещественнозначных пикселей, и ofShortPixels - для пикселей типа unsigned short.
+
+Примечание:
+Команды getColor и setColor имеются и в классе ofImage.
 
